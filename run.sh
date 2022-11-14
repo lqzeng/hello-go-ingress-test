@@ -5,7 +5,7 @@ echo "STARTING SCRIPT"
 echo $HOME 
 
 echo "setting GOPATH"
-export GOPATH = "/home/lucas/go"
+GOPATH = "/home/lucas/go"
 echo $GOPATH
 
 echo "setting .kube config"
