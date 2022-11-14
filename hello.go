@@ -8,6 +8,7 @@ import (
 func main() {
 	http.HandleFunc("/", handler)
 
+	// this port the same as the ingress port
 	http.ListenAndServe(":5678", nil)
 }
 
