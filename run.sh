@@ -11,7 +11,7 @@ echo "-- use context"
 kubectl config use-context kind-kind
 
 # echo "setting .kube config"
-# kubectl --kubeconfig=~/.kube/config
+kubectl --kubeconfig=kubeconfig.yaml
 
 # echo "creating cluster"
 
