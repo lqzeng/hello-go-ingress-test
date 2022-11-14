@@ -4,16 +4,14 @@ echo "STARTING SCRIPT"
 
 echo $HOME 
 
-echo "Installing kubectl"
-curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-echo "Add Kubectl"
-chmod +x ./kubectl
-mv ./kubectl /usr/local/bin/kubectl
+echo "-- getting kubectl context"
+kubectl config current-context
 
 # echo "setting .kube config"
 # kubectl --kubeconfig=~/.kube/config
 
 echo "creating cluster"
+
 kind create cluster --config=kind-ingress.yaml
 
 echo "loading basic go hello docker image"
@@ -28,8 +26,8 @@ kubectl apply -f ingress-usage.yaml
 echo "checking deployment"
 kubectl get all
 
-echo "checking apps are running"
-localhost/foo
-localhost/bar
+# echo "checking apps are running"
+# curl localhost/foo
+# curl localhost/bar
 
 echo "SCRIPT FINISHED"

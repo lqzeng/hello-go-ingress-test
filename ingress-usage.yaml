@@ -99,4 +99,3 @@ spec:
             port:
               number: 5678
 ---
-502 bad gateway
