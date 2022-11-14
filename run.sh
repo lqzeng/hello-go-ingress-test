@@ -13,14 +13,14 @@ kubectl config current-context
 echo "-- use context"
 kubectl config use-context kind-kind
 
-echo "deleting webhook validation"
-kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
-
 echo "creating cluster"
 kind create cluster --config=kind-ingress.yaml
 
 echo "loading basic go hello docker image"
 kind load docker-image hello-go
+
+echo "deleting webhook validation"
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
 
 echo "applying nginx ingress"
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
