@@ -4,6 +4,9 @@ echo "STARTING SCRIPT"
 
 echo $HOME 
 
+echo "--- list docker images"
+docker images
+
 echo "-- getting kubectl context"
 kubectl config current-context
 
@@ -11,7 +14,6 @@ echo "-- use context"
 kubectl config use-context kind-kind
 
 echo "creating cluster"
-
 kind create cluster --config=kind-ingress.yaml
 
 echo "loading basic go hello docker image"
