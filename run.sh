@@ -1,5 +1,7 @@
 echo "STARTING SCRIPT"
 
+echo $GOPATH
+
 echo "creating cluster"
 kind create cluster --config=kind-ingress.yaml
 
