@@ -4,12 +4,12 @@ echo "STARTING SCRIPT"
 
 echo $HOME 
 
-echo "setting GOPATH"
-GOPATH = "/home/lucas/go"
-echo $GOPATH
+# echo "setting GOPATH"
+# GOPATH = "/home/lucas/go"
+# echo $GOPATH
 
-echo "setting .kube config"
-kubectl --kubeconfig=~/.kube/config
+# echo "setting .kube config"
+# kubectl --kubeconfig=~/.kube/config
 
 echo "creating cluster"
 kind create cluster --config=kind-ingress.yaml
