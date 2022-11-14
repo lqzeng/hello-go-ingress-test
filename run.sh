@@ -4,14 +4,17 @@ echo "STARTING SCRIPT"
 
 echo $HOME 
 
-echo "--- list docker images"
-docker images
+# echo "--- list docker images"
+# docker images
 
 echo "-- getting kubectl context"
 kubectl config current-context
 
 echo "-- use context"
 kubectl config use-context kind-kind
+
+echo "deleting webhook validation"
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
 
 echo "creating cluster"
 kind create cluster --config=kind-ingress.yaml
