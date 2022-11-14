@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "STARTING SCRIPT"
 
 echo $HOME 
