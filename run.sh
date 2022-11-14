@@ -1,6 +1,9 @@
 echo "STARTING SCRIPT"
 
-echo $HOME
+echo $HOME 
+
+echo "setting .kube config"
+kubectl --kubeconfig=~/.kube/config
 
 echo "creating cluster"
 kind create cluster --config=kind-ingress.yaml
