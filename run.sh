@@ -8,6 +8,8 @@ echo $HOME
 # GOPATH = "/home/lucas/go"
 echo $GOPATH
 
+go build .
+
 # echo "setting .kube config"
 # kubectl --kubeconfig=~/.kube/config
 
