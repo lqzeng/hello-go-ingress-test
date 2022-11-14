@@ -8,9 +8,6 @@ echo "STARTING SCRIPT"
 echo $HOME 
 echo $PATH
 
-# echo "deleting webhook validation"
-# kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
-
 # echo "--- list docker images"
 # docker images
 
