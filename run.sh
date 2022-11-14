@@ -6,7 +6,7 @@ echo $HOME
 
 # echo "setting GOPATH"
 # GOPATH = "/home/lucas/go"
-# echo $GOPATH
+echo $GOPATH
 
 # echo "setting .kube config"
 # kubectl --kubeconfig=~/.kube/config
