@@ -4,11 +4,11 @@ echo "STARTING SCRIPT"
 
 echo $HOME 
 
-# echo "setting GOPATH"
-# GOPATH = "/home/lucas/go"
-echo $GOPATH
-
-go build .
+echo "Installing kubectl"
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+echo "Add Kubectl"
+chmod +x ./kubectl
+mv ./kubectl /usr/local/bin/kubectl
 
 # echo "setting .kube config"
 # kubectl --kubeconfig=~/.kube/config
