@@ -6,6 +6,7 @@
 echo "STARTING SCRIPT"
 
 echo $HOME 
+echo $PATH
 
 # echo "--- list docker images"
 # docker images
