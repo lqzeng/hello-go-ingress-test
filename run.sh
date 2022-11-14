@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# MAKE SURE bins are in usr/bin
+# add buildkite-agent to docker group
+
 echo "STARTING SCRIPT"
 
 echo $HOME 
