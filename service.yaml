@@ -1,0 +1,39 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: hello-go-server
+  labels:
+    app: hello-go-server
+spec:
+  containers:
+  - name: hello-go-server
+    image: hello-go
+    imagePullPolicy: Never
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-go
+spec:
+  selector:
+    app: hello-go
+  ports:
+  # Port used by the Docker image
+  - port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-go-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: hello-go
+            port:
+              number: 8080
+---
